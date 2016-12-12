@@ -1,20 +1,22 @@
 #!/bin/bash
 #add repository for stretch packages, enabling the installation of PHP7 (more memory efficient) and Nginx1.9
+sudo apt-get install software-properties-common
 sudo add-apt-repository "deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi"
 
 #create logfile in home/pi/
 touch ~/logfile.txt
 
 #create typical directories in home
-mkdir ~/Videos
-mkdir ~/Pictures
-mkdir ~/Music
-mkdir ~/Downloads
-mkdir ~/Temp
-mkdir -p ~/Documents/Coding
-mkdir ~/Sync
+mkdir /home/pi/Videos
+mkdir /home/pi/Pictures
+mkdir /home/pi/Music
+mkdir /home/pi/Downloads
+mkdir /home/pi/Temp
+mkdir -p /home/pi/Documents/Coding
+mkdir /home/pi/Sync
 
 #ensure that by default all packages are prioritized to Jessie unless specified
+sudo touch /etc/apt/preferences
 sudo sed -i '$ a\Package: *' /etc/apt/preferences | tee -a logfile.txt
 sudo sed -i '$ a\Pin: release n=jessie' /etc/apt/preferences | tee -a logfile.txt
 sudo sed -i '$ a\Pin-Priority: 600' /etc/apt/preferences | tee -a logfile.txt
@@ -23,7 +25,7 @@ sudo sed -i '$ a\Pin-Priority: 600' /etc/apt/preferences | tee -a logfile.txt
 sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get upgrade | tee -a logfile.txt
 
 #install regular stuff
-sudo apt-get -y install rsync vim mysql-server ncdu weechat-curses fail2ban htop tmux glances aria2 youtube-dl python-pip python3 python3-pip task surfraw mutt ffmpeg netcat iftop mtr newsbeuter | tee -a logfile.txt
+sudo apt-get -y install rsync vim mysql-server ncdu weechat-curses fail2ban htop tmux glances aria2 youtube-dl python-pip python3 python3-pip task surfraw mutt netcat iftop mtr newsbeuter | tee -a logfile.txt
 sudo pip install mps | tee -a logfile.txt
 sudo pip install haxor-news | tee -a logfile.txt
 sudo pip3 install hangups | tee -a logfile.txt
