@@ -14,7 +14,7 @@ sudo sed -i '$ a\Pin-Priority: 600' /etc/apt/preferences | tee -a logfile.txt
 sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get upgrade | tee -a logfile.txt
 
 #install regular stuff
-sudo apt-get -y install vim mysql-server ncdu weechat-curses fail2ban htop tmux glances aria2 youtube-dl python-pip python3 python3-pip task surfraw mutt ffmpeg netcat iftop mtr newsbeuter | tee -a logfile.txt
+sudo apt-get -y install rsync vim mysql-server ncdu weechat-curses fail2ban htop tmux glances aria2 youtube-dl python-pip python3 python3-pip task surfraw mutt ffmpeg netcat iftop mtr newsbeuter | tee -a logfile.txt
 sudo pip install mps | tee -a logfile.txt
 sudo pip install haxor-news | tee -a logfile.txt
 sudo pip3 install hangups | tee -a logfile.txt
