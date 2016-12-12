@@ -5,6 +5,16 @@ sudo add-apt-repository "deb http://mirrordirector.raspbian.org/raspbian/ stretc
 #create logfile in home/pi/
 touch ~/logfile.txt
 
+#create typical directories in home
+mkdir ~/Videos
+mkdir ~/Pictures
+mkdir ~/Music
+mkdir ~/Downloads
+mkdir ~/Temp
+mkdir ~/Documents
+mkdir ~/Documents/Coding
+mkdir ~/Sync
+
 #ensure that by default all packages are prioritized to Jessie unless specified
 sudo sed -i '$ a\Package: *' /etc/apt/preferences | tee -a logfile.txt
 sudo sed -i '$ a\Pin: release n=jessie' /etc/apt/preferences | tee -a logfile.txt
@@ -28,3 +38,4 @@ php -v | tee -a logfile.txt
 sudo apt-get -y install -t stretch nginx | tee -a logfile.txt
 
 #modify nginx and php fpm to add user pi
+
