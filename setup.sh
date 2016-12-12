@@ -38,5 +38,7 @@ php -v | tee -a logfile.txt
 #install nginx from stretch repo
 sudo apt-get -y install -t stretch nginx | tee -a logfile.txt
 
+sudo apt-get -y install enchant
+sudo pip install sopel
 #modify nginx and php fpm to add user pi
 
