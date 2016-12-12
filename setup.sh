@@ -11,8 +11,7 @@ mkdir ~/Pictures
 mkdir ~/Music
 mkdir ~/Downloads
 mkdir ~/Temp
-mkdir ~/Documents
-mkdir ~/Documents/Coding
+mkdir -p ~/Documents/Coding
 mkdir ~/Sync
 
 #ensure that by default all packages are prioritized to Jessie unless specified
