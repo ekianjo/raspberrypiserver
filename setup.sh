@@ -24,6 +24,9 @@ sudo sed -i '$ a\Pin-Priority: 600' /etc/apt/preferences | tee -a logfile.txt
 #update all sources and upgrade all
 sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get upgrade | tee -a logfile.txt
 
+#syncthing et cmake
+sudo apt-get -y install syncthing cmake
+
 #install regular stuff
 sudo apt-get -y install rsync vim mysql-server ncdu weechat-curses fail2ban htop tmux glances aria2 youtube-dl python-pip python3 python3-pip task surfraw mutt netcat iftop mtr newsbeuter | tee -a logfile.txt
 sudo pip install mps | tee -a logfile.txt
@@ -40,5 +43,6 @@ sudo apt-get -y install -t stretch nginx | tee -a logfile.txt
 
 sudo apt-get -y install enchant
 sudo pip install sopel
-#modify nginx and php fpm to add user pi
 
+#modify nginx and php fpm to add user pi
+#modify php.ini in /etc to allow for larger files and modify also the hash count to allow for longer names
