@@ -41,8 +41,16 @@ php -v | tee -a logfile.txt
 #install nginx from stretch repo
 sudo apt-get -y install -t stretch nginx | tee -a logfile.txt
 
+#sopel for chatbot
 sudo apt-get -y install enchant
 sudo pip install sopel
 
+#mplayer
+sudo apt-get -y install mplayer
+
+#nethogs to monitor internet usage
+sudo apt-get -y install nethogs
+
 #modify nginx and php fpm to add user pi
 #modify php.ini in /etc to allow for larger files and modify also the hash count to allow for longer names
+#make swap file and activate it in the /etc/fstab
